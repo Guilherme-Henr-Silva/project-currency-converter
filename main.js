@@ -15,11 +15,11 @@ document.getElementById('currency-form').addEventListener('submit', function(eve
 
     let valorConvertido;
     if(daMoeda === paraMoeda){
-        valorConvertido = valor;
+        valorConvertido = parseFloat(valor);
     } else{
-        valorConvertido = valor * exchangeRates[daMoeda][paraMoeda];
+        valorConvertido = parseFloat(valor * exchangeRates[daMoeda][paraMoeda]);
     }
 
     const conversao = document.getElementById('conversao');
-    conversao.textContent = `Resultado: ${valorConvertido} ${paraMoeda}`;
+    conversao.textContent = `Resultado: ${valorConvertido.toFixed(2)} ${paraMoeda}`;
 });
